@@ -27,6 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+RATELIMIT_USE_CACHE = "default"
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "ip-tracking-rate-limit",
+    }
+}
 
 # Application definition
 
